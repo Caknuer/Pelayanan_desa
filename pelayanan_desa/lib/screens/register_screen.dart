@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Beranda')),
+      appBar: AppBar(title: Text('Register')),
       body: Center(child: Text('Selamat datang di Aplikasi Pelayanan Desa')),
     );
   }
