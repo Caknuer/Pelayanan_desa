@@ -29,7 +29,7 @@ class _RegisterPageState extends State<RegisterPage> {
             Center(
               child: Image.asset(
                 'assets/wonoacces.png', // pastikan path sesuai
-                height: 120,
+                height: 150,
               ),
             ),
             const SizedBox(height: 32),

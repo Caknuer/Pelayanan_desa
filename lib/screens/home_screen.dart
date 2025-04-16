@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pelayanan_desa/screens/profil_page.dart';
+import 'package:pelayanan_desa/screens/chat_page.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,9 +17,8 @@ class _HomePageState extends State<HomePage> {
    final List<Widget> _pages = [
     HomeContent(),       // halaman utama desa
     Center(child: Text("Riwayat")),
-    Center(child: Text("Chat")),
     // RiwayatPage(),       // dummy riwayat
-    // ChatPage(),          // dummy chat
+    ChatDetailPage(),          // dummy chat
     ProfilPage(),        // halaman profil yang kita buat
   ];
    @override

@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
             Center(
               child: Image.asset(
                 'assets/wonoacces.png', // Ganti dengan logomu
-                height: 120,
+                height: 150,
               ),
             ),
             const SizedBox(height: 32),
