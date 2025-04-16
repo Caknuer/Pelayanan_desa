@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pelayanan_desa/screens/profil_page.dart';
 import 'package:pelayanan_desa/screens/chat_page.dart';
+import 'package:pelayanan_desa/routes/app_routes.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -183,13 +184,13 @@ class HomeContent extends StatelessWidget {
                   context,
                   icon: Icons.credit_card,
                   label: 'Pengajuan KTP',
-                  onTap: () {},
+                  onTap: () {Navigator.pushNamed(context, AppRoutes.formKTP);},
                 ),
                 _buildServiceCard(
                   context,
                   icon: Icons.group,
                   label: 'Pengajuan KK',
-                  onTap: () {},
+                  onTap: () {Navigator.pushNamed(context, AppRoutes.formKK);},
                 ),
                 _buildServiceCard(
                   context,

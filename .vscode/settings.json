@@ -1,0 +1,4 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "cmake.sourceDirectory": "D:/pelayanan_desa/pelayanan_desa/windows/flutter"
+}

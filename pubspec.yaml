@@ -65,6 +65,7 @@ flutter:
   assets:
     - assets/wonoacces.png
     - assets/ban.png
+    - assets/profil.jpeg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

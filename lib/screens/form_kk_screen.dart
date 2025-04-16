@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 
-class FormPermohonanScreen extends StatefulWidget {
+class FormKKScreen extends StatefulWidget {
   @override
-  State<FormPermohonanScreen> createState() => _FormPermohonanScreenState();
+  _FormKKScreenState createState() => _FormKKScreenState();
 }
 
-class _FormPermohonanScreenState extends State<FormPermohonanScreen> {
+class _FormKKScreenState extends State<FormKKScreen> {
   final _formKey = GlobalKey<FormState>();
 
-  final TextEditingController namaController = TextEditingController();
-  final TextEditingController nikController = TextEditingController();
-  final TextEditingController alamatController = TextEditingController();
+  final namaKepalaController = TextEditingController();
+  final nikKepalaController = TextEditingController();
+  final alamatController = TextEditingController();
+  final jumlahAnggotaController = TextEditingController();
 
-  String alasan = 'Hilang';
+  String alasan = 'Baru';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Form Pengajuan KTP')),
+      appBar: AppBar(title: Text('Form Pengajuan KK')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Form(
@@ -25,14 +26,14 @@ class _FormPermohonanScreenState extends State<FormPermohonanScreen> {
           child: ListView(
             children: [
               TextFormField(
-                controller: namaController,
-                decoration: InputDecoration(labelText: 'Nama Lengkap'),
+                controller: namaKepalaController,
+                decoration: InputDecoration(labelText: 'Nama Kepala Keluarga'),
                 validator: (value) =>
                     value!.isEmpty ? 'Nama tidak boleh kosong' : null,
               ),
               TextFormField(
-                controller: nikController,
-                decoration: InputDecoration(labelText: 'NIK'),
+                controller: nikKepalaController,
+                decoration: InputDecoration(labelText: 'NIK Kepala Keluarga'),
                 keyboardType: TextInputType.number,
                 validator: (value) =>
                     value!.length != 16 ? 'NIK harus 16 digit' : null,
@@ -43,11 +44,19 @@ class _FormPermohonanScreenState extends State<FormPermohonanScreen> {
                 validator: (value) =>
                     value!.isEmpty ? 'Alamat tidak boleh kosong' : null,
               ),
+              TextFormField(
+                controller: jumlahAnggotaController,
+                decoration:
+                    InputDecoration(labelText: 'Jumlah Anggota Keluarga'),
+                keyboardType: TextInputType.number,
+                validator: (value) =>
+                    value!.isEmpty ? 'Jumlah anggota wajib diisi' : null,
+              ),
               SizedBox(height: 16),
               DropdownButtonFormField<String>(
                 value: alasan,
                 decoration: InputDecoration(labelText: 'Alasan Pengajuan'),
-                items: ['Hilang', 'Rusak', 'Baru']
+                items: ['Baru', 'Perubahan', 'Hilang']
                     .map((e) => DropdownMenuItem(value: e, child: Text(e)))
                     .toList(),
                 onChanged: (value) => setState(() {
@@ -58,9 +67,8 @@ class _FormPermohonanScreenState extends State<FormPermohonanScreen> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    // sementara hanya tampilkan snackbar
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text('Pengajuan KTP berhasil dikirim'),
+                      content: Text('Pengajuan KK berhasil dikirim'),
                     ));
                   }
                 },
