@@ -63,7 +63,7 @@ class _ProfilPageState extends State<ProfilPage> {
         ),
         const CircleAvatar(
           radius: 50,
-          backgroundImage: AssetImage('assets/profil.png'),
+          backgroundImage: AssetImage('assets/profil.jpeg'),
         ),
         const SizedBox(height: 24),
         _buildTextField("Nama", nameController, enabled: isEditing),

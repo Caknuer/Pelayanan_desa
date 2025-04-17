@@ -4,7 +4,6 @@ import 'package:pelayanan_desa/screens/profil_page.dart';
 import 'package:pelayanan_desa/screens/chat_page.dart';
 import 'package:pelayanan_desa/routes/app_routes.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -15,42 +14,43 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
 
-   final List<Widget> _pages = [
-    HomeContent(),       // halaman utama desa
+  final List<Widget> _pages = [
+    HomeContent(), // halaman utama desa
     Center(child: Text("Riwayat")),
     // RiwayatPage(),       // dummy riwayat
-    ChatDetailPage(),          // dummy chat
-    ProfilPage(),        // halaman profil yang kita buat
+    ChatDetailPage(), // dummy chat
+    ProfilPage(), // halaman profil yang kita buat
   ];
-   @override
+  @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
     return Scaffold(
-    appBar: AppBar(
-      backgroundColor: theme.primaryColor,
-      elevation: 0,
-      title: Text(
-        _getTitle(_currentIndex),
-        style: GoogleFonts.poppins(
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
+      appBar: AppBar(
+        automaticallyImplyLeading: false, // <- tambahkan baris ini
+        backgroundColor: theme.primaryColor,
+        elevation: 0,
+        title: Text(
+          _getTitle(_currentIndex),
+          style: GoogleFonts.poppins(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
         ),
       ),
-    ),
-    body: SafeArea(
-      child: _pages[_currentIndex],
-    ),
-    bottomNavigationBar: BottomNavigationBar(
-      currentIndex: _currentIndex,
-      selectedItemColor: theme.primaryColor,
-      unselectedItemColor: Colors.grey,
-      onTap: (index) {
-        setState(() {
-          _currentIndex = index;
-        });
-      },
-      items: const [
+      body: SafeArea(
+        child: _pages[_currentIndex],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        selectedItemColor: theme.primaryColor,
+        unselectedItemColor: Colors.grey,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Beranda'),
           BottomNavigationBarItem(icon: Icon(Icons.history), label: 'Riwayat'),
           BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
@@ -59,62 +59,6 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  // final List<Widget> _pages = [
-  //   HomeContent(), // Isi halaman Home
-  //   Center(child: Text("Riwayat", style: TextStyle(fontSize: 18))),
-  //   Center(child: Text("Chat", style: TextStyle(fontSize: 18))),
-  //   Center(child: Text("Profil", style: TextStyle(fontSize: 18))),
-  // ];
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   final theme = Theme.of(context);
-
-  //   return Scaffold(
-  //     backgroundColor: Colors.white,
-  //     appBar: AppBar(
-  //       backgroundColor: theme.primaryColor,
-  //       elevation: 0,
-  //       title: Text(
-  //         _getTitle(_currentIndex),
-  //         style: GoogleFonts.poppins(
-  //           fontWeight: FontWeight.bold,
-  //           color: Colors.white,
-  //         ),
-  //       ),
-  //     ),
-  //     body: _pages[_currentIndex],
-  //     bottomNavigationBar: BottomNavigationBar(
-  //       currentIndex: _currentIndex,
-  //       selectedItemColor: theme.primaryColor,
-  //       unselectedItemColor: Colors.grey,
-  //       onTap: (index) {
-  //         setState(() {
-  //           _currentIndex = index;
-  //         });
-  //       },
-  //       items: const [
-  //         BottomNavigationBarItem(
-  //           icon: Icon(Icons.home),
-  //           label: 'Beranda',
-  //         ),
-  //         BottomNavigationBarItem(
-  //           icon: Icon(Icons.history),
-  //           label: 'Riwayat',
-  //         ),
-  //         BottomNavigationBarItem(
-  //           icon: Icon(Icons.chat),
-  //           label: 'Chat',
-  //         ),
-  //         BottomNavigationBarItem(
-  //           icon: Icon(Icons.person),
-  //           label: 'Profil',
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
 
   String _getTitle(int index) {
     switch (index) {
@@ -138,8 +82,6 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Padding(
       padding: const EdgeInsets.all(20),
       child: Column(
@@ -184,25 +126,33 @@ class HomeContent extends StatelessWidget {
                   context,
                   icon: Icons.credit_card,
                   label: 'Pengajuan KTP',
-                  onTap: () {Navigator.pushNamed(context, AppRoutes.formKTP);},
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.formKTP);
+                  },
                 ),
                 _buildServiceCard(
                   context,
                   icon: Icons.group,
                   label: 'Pengajuan KK',
-                  onTap: () {Navigator.pushNamed(context, AppRoutes.formKK);},
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.formKK);
+                  },
                 ),
                 _buildServiceCard(
                   context,
                   icon: Icons.description,
                   label: 'Surat Keterangan',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.formSK);
+                  },
                 ),
                 _buildServiceCard(
                   context,
                   icon: Icons.gavel,
                   label: 'Pengajuan SKCK',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.formSKCK);
+                  },
                 ),
               ],
             ),

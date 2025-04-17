@@ -14,14 +14,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       'title': 'Pelayanan Cepat & Mudah',
       'description':
           'Ajukan KTP, KK, SKCK, dan surat lainnya langsung dari genggaman tanganmu.',
-      'image': 'assets/onboard1.png', // ganti sesuai gambar kamu
+      'image': 'assets/onbo1.png', // ganti sesuai gambar kamu
       'bg': '0xFFDFF8C3',
     },
     {
       'title': 'Transparansi & Efisiensi',
       'description':
           'Proses pelayanan lebih cepat, transparan, dan tanpa antre.',
-      'image': 'assets/onboard2.png',
+      'image': 'assets/onbo2.png',
       'bg': '0xFFFFE8A3',
     },
   ];
@@ -68,7 +68,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 onPressed: () {
                   if (_pageIndex == onboardingData.length - 1) {
                     // Ganti ke halaman utama
-                    Navigator.pushReplacementNamed(context, '/home');
+                    Navigator.pushReplacementNamed(context, '/login');
                   } else {
                     _controller.nextPage(
                       duration: Duration(milliseconds: 300),
