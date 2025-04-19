@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pelayanan_desa/screens/profil_page.dart';
+// import 'package:pelayanan_desa/screens/profil_page.dart';
 import 'package:pelayanan_desa/screens/chat_page.dart';
+import 'riwayat_screen.dart';
 import 'package:pelayanan_desa/routes/app_routes.dart';
+import 'package:pelayanan_desa/screens/profil_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,10 +18,9 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _pages = [
     HomeContent(), // halaman utama desa
-    Center(child: Text("Riwayat")),
-    // RiwayatPage(),       // dummy riwayat
+    RiwayatScreen(),       // dummy riwayat
     ChatDetailPage(), // dummy chat
-    ProfilPage(), // halaman profil yang kita buat
+    ProfileScreen(), // halaman profil yang kita buat
   ];
   @override
   Widget build(BuildContext context) {

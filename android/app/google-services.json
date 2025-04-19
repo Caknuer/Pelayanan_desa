@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "556411271636",
+    "project_id": "wonoaccessapp",
+    "storage_bucket": "wonoaccessapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556411271636:android:f94d800e3f993f01d8be41",
+        "android_client_info": {
+          "package_name": "com.example.pelayanan_desa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgPbzC5EUGreIfztjRLkLJAAzFXeSSrp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

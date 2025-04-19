@@ -14,7 +14,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       'title': 'Pelayanan Cepat & Mudah',
       'description':
           'Ajukan KTP, KK, SKCK, dan surat lainnya langsung dari genggaman tanganmu.',
-      'image': 'assets/onbo1.png', // ganti sesuai gambar kamu
+      'image': 'assets/onbo1.png',
       'bg': '0xFFDFF8C3',
     },
     {

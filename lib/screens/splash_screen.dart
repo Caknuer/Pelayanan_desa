@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'onboarding_screen.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -11,11 +12,30 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
+          _setupFCM(); // ✅ Tambahkan ini
+    Timer(Duration(seconds: 5), () {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => OnboardingScreen()),
         (Route<dynamic> route) => false, // ini menghapus semua halaman sebelumnya
       );
+    });
+  }
+
+  void _setupFCM() async {
+    FirebaseMessaging messaging = FirebaseMessaging.instance;
+
+    await messaging.requestPermission();
+    String? token = await messaging.getToken();
+
+    print('🔑 Token FCM: $token');
+
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      if (message.notification != null) {
+        print('📲 Notif masuk: ${message.notification!.title}');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(message.notification!.title ?? "Notifikasi")),
+        );
+      }
     });
   }
 
