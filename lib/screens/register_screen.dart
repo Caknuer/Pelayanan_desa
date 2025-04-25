@@ -37,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
               "Create Account",
               style: GoogleFonts.poppins(
                 fontSize: 26,
-                color: Color.fromARGB(255, 190, 144, 43),
+                color: const Color.fromARGB(255, 190, 144, 43),
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -46,7 +46,7 @@ class _RegisterPageState extends State<RegisterPage> {
               "Register to get started",
               style: GoogleFonts.poppins(
                 fontSize: 16,
-                color: Color.fromARGB(255, 9, 206, 108),
+                color: const Color.fromARGB(255, 9, 206, 108),
               ),
             ),
             const SizedBox(height: 32),

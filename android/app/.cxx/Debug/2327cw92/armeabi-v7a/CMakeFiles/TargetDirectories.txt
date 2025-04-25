@@ -1,0 +1,2 @@
+D:/ProjectMobile/pelayanan_desa/android/app/.cxx/Debug/2327cw92/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/ProjectMobile/pelayanan_desa/android/app/.cxx/Debug/2327cw92/armeabi-v7a/CMakeFiles/rebuild_cache.dir

@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
               "Welcome Back!",
               style: GoogleFonts.poppins(
                 fontSize: 26,
-                color: Color.fromARGB(255, 190, 144, 43),
+                color: const Color.fromARGB(255, 190, 144, 43),
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
               "Login to continue",
               style: GoogleFonts.poppins(
                 fontSize: 16,
-                color: Color.fromARGB(255, 9, 206, 108),
+                color: const Color.fromARGB(255, 9, 206, 108),
               ),
             ),
             const SizedBox(height: 32),

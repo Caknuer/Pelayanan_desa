@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class FormPermohonanScreen extends StatefulWidget {
+  const FormPermohonanScreen({super.key});
+
   @override
   State<FormPermohonanScreen> createState() => _FormPermohonanScreenState();
 }
@@ -17,7 +19,7 @@ class _FormPermohonanScreenState extends State<FormPermohonanScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Form Pengajuan KTP')),
+      appBar: AppBar(title: const Text('Form Pengajuan KTP')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Form(
@@ -26,27 +28,27 @@ class _FormPermohonanScreenState extends State<FormPermohonanScreen> {
             children: [
               TextFormField(
                 controller: namaController,
-                decoration: InputDecoration(labelText: 'Nama Lengkap'),
+                decoration: const InputDecoration(labelText: 'Nama Lengkap'),
                 validator: (value) =>
                     value!.isEmpty ? 'Nama tidak boleh kosong' : null,
               ),
               TextFormField(
                 controller: nikController,
-                decoration: InputDecoration(labelText: 'NIK'),
+                decoration: const InputDecoration(labelText: 'NIK'),
                 keyboardType: TextInputType.number,
                 validator: (value) =>
                     value!.length != 16 ? 'NIK harus 16 digit' : null,
               ),
               TextFormField(
                 controller: alamatController,
-                decoration: InputDecoration(labelText: 'Alamat'),
+                decoration: const InputDecoration(labelText: 'Alamat'),
                 validator: (value) =>
                     value!.isEmpty ? 'Alamat tidak boleh kosong' : null,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               DropdownButtonFormField<String>(
                 value: alasan,
-                decoration: InputDecoration(labelText: 'Alasan Pengajuan'),
+                decoration: const InputDecoration(labelText: 'Alasan Pengajuan'),
                 items: ['Hilang', 'Rusak', 'Baru']
                     .map((e) => DropdownMenuItem(value: e, child: Text(e)))
                     .toList(),
@@ -54,17 +56,17 @@ class _FormPermohonanScreenState extends State<FormPermohonanScreen> {
                   alasan = value!;
                 }),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     // sementara hanya tampilkan snackbar
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text('Pengajuan KTP berhasil dikirim'),
                     ));
                   }
                 },
-                child: Text('Kirim Permohonan'),
+                child: const Text('Kirim Permohonan'),
               )
             ],
           ),

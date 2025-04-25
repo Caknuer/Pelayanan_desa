@@ -19,18 +19,20 @@ class RiwayatScreen extends StatelessWidget {
     },
   ];
 
+  RiwayatScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Riwayat Pengajuan')),
+      appBar: AppBar(title: const Text('Riwayat Pengajuan')),
       body: ListView.builder(
         itemCount: riwayatDummy.length,
         itemBuilder: (context, index) {
           final item = riwayatDummy[index];
           return Card(
-            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: ListTile(
-              leading: Icon(Icons.article, color: Colors.blue),
+              leading: const Icon(Icons.article, color: Colors.blue),
               title: Text(item['jenis']!),
               subtitle: Text('Tanggal: ${item['tanggal']}'),
               trailing: Text(

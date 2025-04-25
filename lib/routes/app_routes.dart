@@ -17,9 +17,9 @@ class AppRoutes {
   static const String formSKCK = '/formSKCK';
 
   static Map<String, WidgetBuilder> routes = {
-    login: (context) => LoginPage(),
-    register: (context) => RegisterPage(),
-    home: (context) => HomePage(),
+    login: (context) => const LoginPage(),
+    register: (context) => const RegisterPage(),
+    home: (context) => const HomePage(),
     formKTP: (context) => FormPermohonanScreen(),
     formKK: (context) => FormKKScreen(),
     formSK: (context) => FormSKScreen(),

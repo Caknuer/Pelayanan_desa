@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class FormSKScreen extends StatefulWidget {
+  const FormSKScreen({super.key});
+
   @override
   State<FormSKScreen> createState() => _FormSKScreenState();
 }
@@ -26,7 +28,7 @@ class _FormSKScreenState extends State<FormSKScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Form Surat Keterangan')),
+      appBar: AppBar(title: const Text('Form Surat Keterangan')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Form(
@@ -35,13 +37,13 @@ class _FormSKScreenState extends State<FormSKScreen> {
             children: [
               TextFormField(
                 controller: namaController,
-                decoration: InputDecoration(labelText: 'Nama Lengkap'),
+                decoration: const InputDecoration(labelText: 'Nama Lengkap'),
                 validator: (value) =>
                     value!.isEmpty ? 'Nama tidak boleh kosong' : null,
               ),
               TextFormField(
                 controller: nikController,
-                decoration: InputDecoration(labelText: 'NIK'),
+                decoration: const InputDecoration(labelText: 'NIK'),
                 keyboardType: TextInputType.number,
                 validator: (value) =>
                     value!.length != 16 ? 'NIK harus 16 digit' : null,
@@ -49,7 +51,7 @@ class _FormSKScreenState extends State<FormSKScreen> {
               DropdownButtonFormField<String>(
                 value: jenisSurat,
                 decoration:
-                    InputDecoration(labelText: 'Jenis Surat Keterangan'),
+                    const InputDecoration(labelText: 'Jenis Surat Keterangan'),
                 items: listJenisSurat
                     .map((e) => DropdownMenuItem(value: e, child: Text(e)))
                     .toList(),
@@ -61,30 +63,30 @@ class _FormSKScreenState extends State<FormSKScreen> {
               ),
               TextFormField(
                 controller: keperluanController,
-                decoration: InputDecoration(labelText: 'Keperluan'),
+                decoration: const InputDecoration(labelText: 'Keperluan'),
                 validator: (value) =>
                     value!.isEmpty ? 'Keperluan harus diisi' : null,
               ),
               TextFormField(
                 controller: alamatController,
-                decoration: InputDecoration(labelText: 'Alamat'),
+                decoration: const InputDecoration(labelText: 'Alamat'),
                 validator: (value) =>
                     value!.isEmpty ? 'Alamat tidak boleh kosong' : null,
               ),
               TextFormField(
                 controller: catatanController,
-                decoration: InputDecoration(labelText: 'Catatan Tambahan'),
+                decoration: const InputDecoration(labelText: 'Catatan Tambahan'),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text('Pengajuan Surat Keterangan berhasil dikirim'),
                     ));
                   }
                 },
-                child: Text('Kirim Permohonan'),
+                child: const Text('Kirim Permohonan'),
               ),
             ],
           ),

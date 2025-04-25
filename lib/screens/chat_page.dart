@@ -93,7 +93,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                         const SizedBox(height: 4),
                         Text(
                           formatTime(msg.timestamp),
-                          style: TextStyle(fontSize: 10, color: Colors.white70),
+                          style: const TextStyle(fontSize: 10, color: Colors.white70),
                         ),
                       ],
                     ),

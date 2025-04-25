@@ -19,6 +19,8 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 }
 
 class WonoAccessApp extends StatelessWidget {
+  const WonoAccessApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +30,7 @@ class WonoAccessApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.brown,
       ),
-      initialRoute: AppRoutes.login,
+      // initialRoute: AppRoutes.login,
       routes: AppRoutes.routes,
     );
   }

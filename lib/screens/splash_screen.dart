@@ -4,6 +4,8 @@ import 'onboarding_screen.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -13,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
           _setupFCM(); // ✅ Tambahkan ini
-    Timer(Duration(seconds: 5), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => OnboardingScreen()),
         (Route<dynamic> route) => false, // ini menghapus semua halaman sebelumnya
@@ -41,13 +43,18 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFA8E06F),
+    return  Scaffold(
+      backgroundColor: Color(0xFFA8E06F),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.location_city, size: 100, color: Colors.white),
+            Image.asset(
+              'assets/splash_logo.png',
+              width: 100, // bisa disesuaikan
+              height: 100,
+              fit: BoxFit.contain,
+            ),
             SizedBox(height: 20),
             Text(
               'WonoAccess',

@@ -17,10 +17,10 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    HomeContent(), // halaman utama desa
+    const HomeContent(), // halaman utama desa
     RiwayatScreen(),       // dummy riwayat
-    ChatDetailPage(), // dummy chat
-    ProfileScreen(), // halaman profil yang kita buat
+    const ChatDetailPage(), // dummy chat
+    const ProfileScreen(), // halaman profil yang kita buat
   ];
   @override
   Widget build(BuildContext context) {
@@ -93,7 +93,7 @@ class HomeContent extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: 22,
               fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 238, 175, 38),
+              color: const Color.fromARGB(255, 238, 175, 38),
             ),
           ),
           const SizedBox(height: 16),
